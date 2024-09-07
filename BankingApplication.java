@@ -13,6 +13,10 @@ class BankAccount{
     int previousTransaction;
     String customerName;
     String customerId;
+    BankAccount(String cname, String cid){
+        customerName = cname;
+        customerId = cid;
+    }
 
     void deposit(int amount){
         if(amount != 0){
@@ -26,6 +30,20 @@ class BankAccount{
             balance = balance - amount;
             previousTransaction = -amount;
           }
+    }
+    void getPreviousTransaction(){
+        if(previousTransaction > 0){
+            System.out.println("Deposited :" + previousTransaction);
+        }
+        else if(previousTransaction < 0){
+            System.out.println("Withdrawn :" + Math.abs(previousTransaction));
+        }
+        else{
+            System.out.println("No Transaction Occured");
+        }
+    }
+    void showMenu(){
+
     }
 
 }
